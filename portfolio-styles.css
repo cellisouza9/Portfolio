@@ -921,8 +921,9 @@ h1 strong { color: #5b21b6; }
   .chatbot-decor-topleft,
   .chatbot-decor-topright,
   .chatbot-decor-right-low {
-    max-width: 140px;
+    max-width: 180px;
     opacity: 0.25;
+    top: 0;
   }
 }
 /* ESPAÇO BRANCO ENTRE DELIVERY E CHATBOT */
@@ -1379,7 +1380,7 @@ h1 strong { color: #5b21b6; }
   .btn-group .btn { width: 100%; justify-content: center; }
   .cta-box { padding: 32px 18px; }
   .chatbot-visual-wrapper { padding: 16px; }
-  .spacer { height: 30px; }
+  .spacer { height: 8px; }
   /* comparativo antes vs depois */
   .comparativo-grid { grid-template-columns: 1fr !important; }
   .btn-delivery { width: 100%; justify-content: center; padding: 14px 20px !important; font-size: 14px !important; }
