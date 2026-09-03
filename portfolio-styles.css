@@ -914,8 +914,8 @@ h1 strong { color: #5b21b6; }
   z-index: 0;
   pointer-events: none;
 }
-.chatbot-decor-topleft { top: -40px; left: 10%; transform: scaleX(-1); }
-.chatbot-decor-topright { top: -40px; right: 10%; }
+.chatbot-decor-topleft { top: -90px; left: 10%; transform: scaleX(-1); }
+.chatbot-decor-topright { top: -90px; right: 10%; }
 .chatbot-decor-right-low { bottom: -30px; right: -40px; max-width: 200px; opacity: 0.35; }
 @media (max-width: 768px) {
   .chatbot-decor-topleft,
