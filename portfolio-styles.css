@@ -727,7 +727,7 @@ h1 strong { color: #5b21b6; }
 /* delivery */
 .delivery {
   background: #2d72f7;
-  color: #000;
+  color: #fff;
   position: relative;
   overflow: hidden;
 }
@@ -764,8 +764,8 @@ h1 strong { color: #5b21b6; }
     padding-top: 35px !important;
   }
 }
-.delivery .section-head p { color: #000; font-weight: 500; }
-.delivery .eyebrow { color: #000; }
+.delivery .section-head p { color: #fff; font-weight: 500; }
+.delivery .eyebrow { color: #fff; }
 
 /* projetos - fundo roxo, mesmo padrão da seção delivery */
 #projetos.section {
@@ -832,10 +832,10 @@ h1 strong { color: #5b21b6; }
   border-color: rgba(255,255,255,0.25);
   transform: translateY(-3px);
 }
-.delivery-card .icon { font-size: 34px; color: #000; }
+.delivery-card .icon { font-size: 34px; color: #fff; }
 .delivery-card .icon img { width: 34px; height: 34px; display: block; }
-.delivery-card h3 { font-size: 19px; margin: 16px 0 8px; }
-.delivery-card p { font-size: 14px; line-height: 1.6; color: #000; font-weight: 500; }
+.delivery-card h3 { font-size: 19px; margin: 16px 0 8px; color: #fff; }
+.delivery-card p { font-size: 14px; line-height: 1.6; color: #fff; font-weight: 500; }
 /* preview do chatbot - elementos decorativos da identidade visual, coloridos, fundo branco */
 .chatbot-preview-section {
   position: relative;
