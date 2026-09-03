@@ -921,12 +921,8 @@ h1 strong { color: #5b21b6; }
   .chatbot-decor-topleft,
   .chatbot-decor-topright,
   .chatbot-decor-right-low {
-    max-width: 180px;
-    opacity: 0.25;
-    top: 0;
+    display: none;
   }
-  .chatbot-decor-topleft { left: 2%; }
-  .chatbot-decor-topright { right: 2%; }
 }
 /* ESPAÇO BRANCO ENTRE DELIVERY E CHATBOT */
 .spacer {
