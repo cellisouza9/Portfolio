@@ -1351,7 +1351,7 @@ h1 strong { color: #5b21b6; }
   .services .service.reveal.is-visible:nth-child(odd),
   .services .service.reveal.is-visible:nth-child(even) { transform: translateX(0); }
   /* delivery: mantém 2 colunas no mobile, cards menores + mesmo efeito de deslizar */
-  .delivery-grid { grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 32px; }
+  .delivery-grid { grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 8px; }
   .delivery-card { padding: 16px 12px; border-radius: 14px; }
   .delivery-card .icon { font-size: 22px; }
   .delivery-card .icon img { width: 22px; height: 22px; }
