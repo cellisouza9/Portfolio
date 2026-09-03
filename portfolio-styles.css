@@ -779,10 +779,10 @@ h1 strong { color: #5b21b6; }
 
 @media (max-width: 480px) {
   .espaco-delivery {
-    height: 12px;
+    height: 0;
   }
   .delivery {
-    padding-top: 18px !important;
+    padding-top: 4px !important;
   }
 }
 .delivery .section-head p { color: #fff; font-weight: 500; }
