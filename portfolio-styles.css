@@ -532,13 +532,22 @@ h1 strong { color: #5b21b6; }
 .sites-grid {
   display: grid;
   grid-template-columns: 0.8fr 1.6fr;
+  grid-template-areas: "text image" "cta image";
   gap: 50px;
   align-items: center;
 }
+.sites-text { grid-area: text; }
+.sites-cta { grid-area: cta; margin-top: 32px; }
 @media (max-width: 900px) {
-  .sites-grid { grid-template-columns: 1fr; gap: 32px; }
+  .sites-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: "text" "image" "cta";
+    gap: 32px;
+  }
+  .sites-cta { margin-top: 0; }
 }
 .sites-print-container {
+  grid-area: image;
   background: linear-gradient(145deg, #1A1128, #5B21B6);
   border-radius: 28px;
   padding: 32px;
