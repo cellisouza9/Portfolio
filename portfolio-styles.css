@@ -815,6 +815,7 @@ h1 strong { color: #5b21b6; }
   .projetos-decor-right {
     max-width: 220px;
     opacity: 0.4;
+    top: -80px;
   }
 }
 #projetos .section-head h2 { color: #fff; }
