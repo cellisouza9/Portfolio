@@ -285,12 +285,13 @@ h1 strong { color: #5b21b6; }
   grid-template-columns: 1.1fr 1fr;
   gap: 40px;
   align-items: center;
-  background: #fff;
-  border: 1px solid #e9e3f4;
+  background: transparent;
+  border: none;
   border-radius: 24px;
-  padding: 40px;
-  margin-bottom: 50px;
-  box-shadow: 0 20px 40px rgba(17,12,28,0.06);
+  padding: 40px 0 0;
+  margin-top: 50px;
+  margin-bottom: 0;
+  box-shadow: none;
 }
 .aicare-badge {
   display: inline-flex;
