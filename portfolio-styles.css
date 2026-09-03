@@ -265,7 +265,7 @@ h1 strong { color: #5b21b6; }
 /* sections */
 .section { padding: 80px 0; }
 .section-soft { background: #f5f2fc; }
-.services-section { background: #e4d9f7; }
+.services-section { background: #e4d9f7; overflow-x: hidden; }
 .section-head {
   text-align: center;
   max-width: 700px;
@@ -1323,6 +1323,11 @@ h1 strong { color: #5b21b6; }
   .services { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr; }
   .hero { padding: 40px 0; }
+  /* cards de "Da IA ao atendimento" entram deslizando da esquerda/direita no mobile */
+  .services .service.reveal:nth-child(odd) { transform: translateX(-70px); }
+  .services .service.reveal:nth-child(even) { transform: translateX(70px); }
+  .services .service.reveal.is-visible:nth-child(odd),
+  .services .service.reveal.is-visible:nth-child(even) { transform: translateX(0); }
   .hero-trust { flex-direction: column; gap: 6px; }
   .device-showcase { height: 240px; }
   .laptop { width: 240px; height: 160px; }
