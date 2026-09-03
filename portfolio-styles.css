@@ -950,7 +950,8 @@ h1 strong { color: #5b21b6; }
   .chatbot-preview-item img { height: 380px; }
 }
 @media (max-width: 600px) {
-  .chatbot-preview-item img { height: 300px; }
+  .chatbot-preview-item img { height: 340px; }
+  .chatbot-preview-row { gap: 16px; }
 }
 /* chatbot visual wrapper - novo layout */
 .chatbot-visual-wrapper {
