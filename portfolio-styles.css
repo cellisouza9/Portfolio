@@ -883,6 +883,14 @@ h1 strong { color: #5b21b6; }
   .chatbot-preview-decor-right {
     max-width: 140px;
     opacity: 0.12;
+    /* itens empilham no mobile: alinha atrás da primeira foto, não no meio da pilha */
+    top: 210px;
+  }
+}
+@media (max-width: 600px) {
+  .chatbot-preview-decor-left,
+  .chatbot-preview-decor-right {
+    top: 175px;
   }
 }
 /* chatbot section - mesmo estilo do delivery */
