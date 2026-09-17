@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conte pra CellySistemas sobre o seu projeto: site, landing page, delivery, automação ou IA. Responda em poucos minutos.">
+  <title>Vamos conhecer seu projeto | CellySistemas</title>
+  <link rel="icon" type="image/png" href="portifolio-img/img/favicon-celly.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="portfolio-styles.css">
+  <style>
+    /* ===== Página do questionário — escopada em .quiz-page ===== */
+    .quiz-page { background: #f6f3fc; min-height: 100vh; }
+    .quiz-header { background: #fff; border-bottom: 1px solid #ede8f7; padding: 18px 0; }
+    .quiz-header .container { display: flex; align-items: center; justify-content: space-between; }
+    .quiz-header .logo img { height: 60px; width: auto; display: block; }
+    .quiz-header .back-link { color: #5b21b6; font-weight: 600; font-size: 14px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+    .quiz-header .back-link:hover { color: #321c64; }
+
+    .quiz-wrap { max-width: 640px; margin: 0 auto; padding: 48px 20px 80px; }
+    .quiz-intro { text-align: center; margin-bottom: 28px; }
+    .quiz-intro .eyebrow { display: inline-block; color: #7c3aed; font-weight: 700; font-size: 13px; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 10px; }
+    .quiz-intro h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(26px, 4vw, 34px); letter-spacing: -1px; color: #000; margin-bottom: 10px; }
+    .quiz-intro p { color: #000; font-size: 15.5px; max-width: 520px; margin: 0 auto; }
+
+    .quiz-progress { margin-bottom: 22px; }
+    .quiz-progress-label { display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; color: #5b21b6; margin-bottom: 8px; }
+    .quiz-progress-bar { height: 8px; border-radius: 20px; background: #e6def5; overflow: hidden; }
+    .quiz-progress-fill { height: 100%; background: linear-gradient(135deg, #5b21b6, #7c3aed); border-radius: 20px; transition: width 0.35s ease; }
+
+    .quiz-card { background: #fff; border-radius: 24px; padding: 36px 32px; box-shadow: 0 20px 50px rgba(91,33,182,0.08); }
+    .quiz-step { display: none; }
+    .quiz-step.active { display: block; animation: quizFade 0.3s ease; }
+    @keyframes quizFade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+    .quiz-step h2 { font-family: 'Montserrat', sans-serif; font-size: 21px; color: #000; margin-bottom: 6px; }
+    .quiz-step .hint { color: #000; font-size: 13.5px; margin-bottom: 22px; }
+
+    .quiz-field { margin-bottom: 18px; }
+    .quiz-field label { display: block; font-weight: 600; font-size: 14px; color: #000; margin-bottom: 6px; }
+    .quiz-field input[type="text"],
+    .quiz-field input[type="tel"],
+    .quiz-field input[type="email"],
+    .quiz-field select,
+    .quiz-field textarea {
+      width: 100%; padding: 13px 16px; border: 1.5px solid #e2dcef; border-radius: 12px;
+      font-family: 'Inter', sans-serif; font-size: 14.5px; color: #000; background: #fbfaff;
+      transition: 0.2s;
+    }
+    .quiz-field input:focus, .quiz-field select:focus, .quiz-field textarea:focus {
+      outline: none; border-color: #8b5cf6; background: #fff; box-shadow: 0 0 0 3px rgba(139,92,246,0.12);
+    }
+    .quiz-field textarea { resize: vertical; min-height: 100px; }
+
+    .quiz-options { display: grid; gap: 10px; }
+    .quiz-option { position: relative; }
+    .quiz-option input { position: absolute; opacity: 0; }
+    .quiz-option label {
+      display: flex; align-items: center; gap: 12px; padding: 14px 16px; border: 1.5px solid #e2dcef;
+      border-radius: 12px; cursor: pointer; font-weight: 600; font-size: 14.5px; color: #000;
+      transition: 0.2s; margin-bottom: 0;
+    }
+    .quiz-option label i { color: #8b5cf6; font-size: 16px; width: 20px; text-align: center; }
+    .quiz-option input:checked + label { border-color: #8b5cf6; background: #f5f1fd; color: #4c1d95; }
+    .quiz-option label:hover { border-color: #b9a4e8; }
+
+    .quiz-note { background: #f0ecfa; border-radius: 12px; padding: 12px 16px; font-size: 13px; color: #5b21b6; margin-bottom: 22px; display: flex; gap: 8px; align-items: flex-start; }
+    .quiz-note i { margin-top: 1px; }
+
+    .quiz-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 26px; gap: 12px; }
+    .quiz-btn { border: none; cursor: pointer; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14.5px; border-radius: 60px; padding: 13px 26px; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s; }
+    .quiz-btn-next { background: linear-gradient(135deg, #5b21b6, #7c3aed); color: #fff; box-shadow: 0 10px 24px rgba(91,33,182,0.25); margin-left: auto; }
+    .quiz-btn-next:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(91,33,182,0.32); }
+    .quiz-btn-back { background: transparent; color: #7c3aed; padding: 13px 10px; }
+    .quiz-btn-back:hover { color: #4c1d95; }
+    .quiz-btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none !important; }
+
+    .quiz-error { color: #d64545; font-size: 13px; margin-top: -8px; margin-bottom: 14px; display: none; }
+    .quiz-error.show { display: block; }
+
+    /* etapa final / obrigado */
+    .quiz-done { text-align: center; padding: 20px 0 4px; }
+    .quiz-done .check { width: 64px; height: 64px; border-radius: 50%; background: #f0ecfa; color: #5b21b6; display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto 18px; }
+    .quiz-done h2 { margin-bottom: 10px; }
+    .quiz-done p { color: #000; font-size: 15px; margin-bottom: 24px; }
+    .quiz-done .wpp-link { display: inline-flex; align-items: center; gap: 8px; color: #16a34a; font-weight: 700; font-size: 14px; text-decoration: none; }
+    .quiz-done .wpp-link:hover { color: #15803d; }
+
+    @media (max-width: 560px) {
+      .quiz-card { padding: 28px 20px; border-radius: 18px; }
+      .quiz-wrap { padding: 32px 14px 60px; }
+    }
+  </style>
+</head>
+<body class="quiz-page">
+
+  <header class="quiz-header">
+    <div class="container">
+      <a href="index.html" class="logo"><img src="portifolio-img/logo/logo-celly.png" alt="CellySistemas"></a>
+      <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Voltar ao site</a>
+    </div>
+  </header>
+
+  <div class="quiz-wrap">
+    <div class="quiz-intro">
+      <span class="eyebrow">Vamos começar</span>
+      <h1>Conte pra gente sobre a sua empresa</h1>
+      <p>Leva menos de 2 minutos. Com essas informações a gente já chega na conversa do WhatsApp entendendo o que você precisa.</p>
+    </div>
+
+    <div class="quiz-progress">
+      <div class="quiz-progress-label">
+        <span id="stepLabel">Etapa 1 de 5</span>
+        <span id="stepPercent">20%</span>
+      </div>
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="progressFill" style="width:20%;"></div></div>
+    </div>
+
+    <div class="quiz-card">
+      <form id="quizForm" action="https://formsubmit.co/cellisistemas@gmail.com" method="POST">
+        <!-- config do FormSubmit -->
+        <input type="hidden" name="_subject" value="Novo lead pelo questionário do site 🎯">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+
+        <!-- Etapa 1: dados de contato -->
+        <div class="quiz-step active" data-step="1">
+          <h2>Como podemos te chamar?</h2>
+          <p class="hint">Pra gente falar com você da forma certa.</p>
+          <div class="quiz-field">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="Nome" placeholder="Seu nome" required>
+          </div>
+          <div class="quiz-field">
+            <label for="whatsapp">WhatsApp</label>
+            <input type="tel" id="whatsapp" name="WhatsApp" placeholder="(21) 90000-0000" required>
+          </div>
+          <div class="quiz-field">
+            <label for="email">E-mail <span style="color:#a89dc4; font-weight:500;">(opcional)</span></label>
+            <input type="email" id="email" name="E-mail" placeholder="seu@email.com">
+          </div>
+        </div>
+
+        <!-- Etapa 2: tipo de projeto -->
+        <div class="quiz-step" data-step="2">
+          <h2>Qual tipo de projeto você precisa?</h2>
+          <p class="hint">Escolha a opção que mais se aproxima da sua ideia.</p>
+          <div class="quiz-options">
+            <div class="quiz-option">
+              <input type="radio" id="tipo1" name="Tipo de projeto" value="Site institucional" required>
+              <label for="tipo1"><i class="fas fa-globe"></i> Site institucional</label>
+            </div>
+            <div class="quiz-option">
+              <input type="radio" id="tipo2" name="Tipo de projeto" value="Landing Page">
+              <label for="tipo2"><i class="fas fa-bolt"></i> Landing Page</label>
+            </div>
+            <div class="quiz-option">
+              <input type="radio" id="tipo3" name="Tipo de projeto" value="Delivery / Loja virtual">
+              <label for="tipo3"><i class="fas fa-store"></i> Delivery / Loja virtual</label>
+            </div>
+            <div class="quiz-option">
+              <input type="radio" id="tipo4" name="Tipo de projeto" value="Automação / Chatbot com IA">
+              <label for="tipo4"><i class="fas fa-robot"></i> Automação / Chatbot com IA</label>
+            </div>
+            <div class="quiz-option">
+              <input type="radio" id="tipo5" name="Tipo de projeto" value="Ainda não sei / preciso de orientação">
+              <label for="tipo5"><i class="fas fa-circle-question"></i> Ainda não sei / preciso de orientação</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Etapa 3: descrição -->
+        <div class="quiz-step" data-step="3">
+          <h2>Fale um pouco sobre a ideia</h2>
+          <p class="hint">Pode ser um resumo simples — sem problema se ainda não tiver tudo definido.</p>
+          <div class="quiz-field">
+            <label for="descricao">Descreva seu projeto</label>
+            <textarea id="descricao" name="Descrição do projeto" placeholder="Ex: quero um site de delivery pro meu restaurante, com cardápio online e pagamento pelo site." required></textarea>
+          </div>
+        </div>
+
+        <!-- Etapa 4: prazo e escopo -->
+        <div class="quiz-step" data-step="4">
+          <h2>Prazo e escopo do projeto</h2>
+          <p class="hint">Pode responder "a definir" se ainda não tiver certeza.</p>
+          <div class="quiz-field">
+            <label for="prazo">Prazo desejado</label>
+            <select id="prazo" name="Prazo desejado" required>
+              <option value="" disabled selected>Selecione uma opção</option>
+              <option value="O quanto antes">O quanto antes</option>
+              <option value="Até 30 dias">Até 30 dias</option>
+              <option value="1 a 3 meses">1 a 3 meses</option>
+              <option value="Sem pressa / a definir">Sem pressa / a definir</option>
+            </select>
+          </div>
+          <div class="quiz-field">
+            <label for="escopo">Qual o tamanho do projeto que você imagina?</label>
+            <select id="escopo" name="Tamanho do projeto" required>
+              <option value="" disabled selected>Selecione uma opção</option>
+              <option value="Algo simples e básico, pra começar">Algo simples e básico, pra começar</option>
+              <option value="Algo completo, com várias funcionalidades">Algo completo, com várias funcionalidades</option>
+              <option value="Quero o que for melhor pro meu negócio crescer">Quero o que for melhor pro meu negócio crescer</option>
+              <option value="Ainda não sei, quero orientação">Ainda não sei, quero orientação</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Etapa 5: origem -->
+        <div class="quiz-step" data-step="5">
+          <h2>Última pergunta</h2>
+          <p class="hint">Como você conheceu a CellySistemas?</p>
+          <div class="quiz-field">
+            <select id="origem" name="Como conheceu">
+              <option value="" disabled selected>Selecione uma opção</option>
+              <option value="Instagram">Instagram</option>
+              <option value="Google">Google</option>
+              <option value="Indicação de alguém">Indicação de alguém</option>
+              <option value="WhatsApp">WhatsApp</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </div>
+          <div class="quiz-note"><i class="fas fa-lock"></i> Suas respostas são enviadas direto pro e-mail da CellySistemas e usadas só para te dar um atendimento melhor.</div>
+        </div>
+
+        <div class="quiz-error" id="quizError">Por favor, preencha este campo antes de continuar.</div>
+
+        <div class="quiz-nav">
+          <button type="button" class="quiz-btn quiz-btn-back" id="btnBack" style="visibility:hidden;"><i class="fas fa-arrow-left"></i> Voltar</button>
+          <button type="button" class="quiz-btn quiz-btn-next" id="btnNext">Continuar <i class="fas fa-arrow-right"></i></button>
+          <button type="submit" class="quiz-btn quiz-btn-next" id="btnSubmit" style="display:none;">Enviar respostas <i class="fas fa-paper-plane"></i></button>
+        </div>
+      </form>
+
+      <div class="quiz-done" id="quizDone" style="display:none;">
+        <div class="check"><i class="fas fa-check"></i></div>
+        <h2>Recebemos suas respostas! 🎉</h2>
+        <p>Em breve alguém da CellySistemas entra em contato pelo WhatsApp que você informou. Se preferir, já pode continuar a conversa por lá agora mesmo.</p>
+        <a href="https://wa.me/5521966729503" target="_blank" rel="noopener" class="wpp-link"><i class="fab fa-whatsapp"></i> Falar agora no WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const form = document.getElementById('quizForm');
+      const steps = Array.from(form.querySelectorAll('.quiz-step'));
+      const total = steps.length;
+      let current = 1;
+
+      const stepLabel = document.getElementById('stepLabel');
+      const stepPercent = document.getElementById('stepPercent');
+      const progressFill = document.getElementById('progressFill');
+      const btnBack = document.getElementById('btnBack');
+      const btnNext = document.getElementById('btnNext');
+      const btnSubmit = document.getElementById('btnSubmit');
+      const quizError = document.getElementById('quizError');
+      const quizDone = document.getElementById('quizDone');
+
+      function updateUI() {
+        steps.forEach(s => s.classList.toggle('active', Number(s.dataset.step) === current));
+        stepLabel.textContent = 'Etapa ' + current + ' de ' + total;
+        const pct = Math.round((current / total) * 100);
+        stepPercent.textContent = pct + '%';
+        progressFill.style.width = pct + '%';
+        btnBack.style.visibility = current === 1 ? 'hidden' : 'visible';
+        btnNext.style.display = current === total ? 'none' : 'inline-flex';
+        btnSubmit.style.display = current === total ? 'inline-flex' : 'none';
+        quizError.classList.remove('show');
+      }
+
+      function currentStepEl() {
+        return steps.find(s => Number(s.dataset.step) === current);
+      }
+
+      function validateCurrentStep() {
+        const stepEl = currentStepEl();
+        const fields = Array.from(stepEl.querySelectorAll('input[required], select[required], textarea[required]'));
+        if (fields.length === 0) return true;
+
+        // campos de radio: basta 1 marcado no grupo
+        const radioGroups = new Set(fields.filter(f => f.type === 'radio').map(f => f.name));
+        for (const name of radioGroups) {
+          const checked = stepEl.querySelector('input[name="' + name + '"]:checked');
+          if (!checked) return false;
+        }
+        const others = fields.filter(f => f.type !== 'radio');
+        for (const f of others) {
+          if (!f.value || !f.value.trim()) return false;
+        }
+        return true;
+      }
+
+      btnNext.addEventListener('click', function () {
+        if (!validateCurrentStep()) {
+          quizError.classList.add('show');
+          return;
+        }
+        quizError.classList.remove('show');
+        if (current < total) {
+          current++;
+          updateUI();
+        }
+      });
+
+      btnBack.addEventListener('click', function () {
+        if (current > 1) {
+          current--;
+          updateUI();
+        }
+      });
+
+      form.addEventListener('submit', function (e) {
+        if (!validateCurrentStep()) {
+          e.preventDefault();
+          quizError.classList.add('show');
+          return;
+        }
+        e.preventDefault();
+        btnSubmit.disabled = true;
+        btnSubmit.innerHTML = 'Enviando... <i class="fas fa-spinner fa-spin"></i>';
+
+        fetch('https://formsubmit.co/ajax/cellisistemas@gmail.com', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        })
+        .then(() => {
+          form.style.display = 'none';
+          document.querySelector('.quiz-progress').style.display = 'none';
+          quizDone.style.display = 'block';
+        })
+        .catch(() => {
+          btnSubmit.disabled = false;
+          btnSubmit.innerHTML = 'Enviar respostas <i class="fas fa-paper-plane"></i>';
+          quizError.textContent = 'Não conseguimos enviar agora. Tente novamente ou fale direto no WhatsApp.';
+          quizError.classList.add('show');
+        });
+      });
+
+      updateUI();
+    })();
+  </script>
+</body>
+</html>
